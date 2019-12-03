@@ -1,6 +1,5 @@
 package org.bcatarino.fizzbuzz;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -13,7 +12,7 @@ public class FizzBuzz {
 
     public static void main(String... args) {
         FizzBuzz fizzBuzz = new FizzBuzz();
-        List<String> result = fizzBuzz.forFirstN(100);
+        List<String> result = fizzBuzz.forFirstN(getCount(args));
         result.forEach(System.out::println);
     }
 
@@ -22,5 +21,14 @@ public class FizzBuzz {
         return IntStream.range(1, count + 1)
                         .mapToObj(x -> fizzBuzzCalculator.getResult(x))
                         .collect(Collectors.toList());
+    }
+
+    private static int getCount(String... args) {
+        if (args.length == 0) return 100;
+        try {
+            return Integer.parseInt(args[0]);
+        } catch (NumberFormatException e) {
+            return 100;
+        }
     }
 }
