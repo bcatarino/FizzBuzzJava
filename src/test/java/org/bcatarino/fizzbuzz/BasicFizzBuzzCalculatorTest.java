@@ -33,4 +33,14 @@ public class BasicFizzBuzzCalculatorTest {
     public void testReturnsFizzIfMultipleOf3() {
         assertEquals("Fizz", calculator.getResult(9));
     }
+
+    @Test
+    public void testReturnsBuzzIf5() {
+        assertEquals("Buzz", calculator.getResult(5));
+    }
+
+    @Test
+    public void testReturnsBuzzIfMultipleOf5() {
+        assertEquals("Buzz", calculator.getResult(20));
+    }
 }
