@@ -35,6 +35,16 @@ public class BasicFizzBuzzCalculatorTest {
     }
 
     @Test
+    public void testReturnsFizzIfHas3() {
+        assertEquals("Fizz", calculator.getResult(734));
+    }
+
+    @Test
+    public void testReturnsFizzIfHasMultiple3s() {
+        assertEquals("Fizz", calculator.getResult(737232341));
+    }
+
+    @Test
     public void testReturnsBuzzIf5() {
         assertEquals("Buzz", calculator.getResult(5));
     }
@@ -45,6 +55,16 @@ public class BasicFizzBuzzCalculatorTest {
     }
 
     @Test
+    public void testReturnsBuzzIfHas5() {
+        assertEquals("Buzz", calculator.getResult(58));
+    }
+
+    @Test
+    public void testReturnsBuzzIfHasMultiple5s() {
+        assertEquals("Buzz", calculator.getResult(755262541));
+    }
+
+    @Test
     public void testReturnsFizzBuzzIfMinimumMultipleOf3And5() {
         assertEquals("FizzBuzz", calculator.getResult(15));
     }
@@ -52,5 +72,20 @@ public class BasicFizzBuzzCalculatorTest {
     @Test
     public void testReturnsFizzBuzzIfMultipleOf3And5() {
         assertEquals("FizzBuzz", calculator.getResult(60));
+    }
+
+    @Test
+    public void testReturnsFizzBuzzIfMultipleOf3AndHas5() {
+        assertEquals("FizzBuzz", calculator.getResult(51));
+    }
+
+    @Test
+    public void testReturnsFizzBuzzIfMultipleOf5AndHas3() {
+        assertEquals("FizzBuzz", calculator.getResult(230));
+    }
+
+    @Test
+    public void testReturnsFizzBuzzIfHas3And5() {
+        assertEquals("FizzBuzz", calculator.getResult(53));
     }
 }

@@ -7,26 +7,26 @@ public class BasicFizzBuzzCalculator implements FizzBuzzCalculator {
     public String getResult(int number) {
         if (number <= 0) throw new IllegalArgumentException(INVALID_ARGUMENT_MSG);
 
-        if (isMultipleOf3(number) && isMultipleOf5(number)) {
+        if (isFizz(number) && isBuzz(number)) {
             return "FizzBuzz";
         }
 
-        if (isMultipleOf5(number)) {
+        if (isBuzz(number)) {
             return "Buzz";
         }
 
-        if (isMultipleOf3(number)) {
+        if (isFizz(number)) {
             return "Fizz";
         }
 
         return String.valueOf(number);
     }
 
-    private boolean isMultipleOf5(int number) {
-        return number % 5 == 0;
+    private boolean isBuzz(int number) {
+        return number % 5 == 0 || String.valueOf(number).contains("5");
     }
 
-    private boolean isMultipleOf3(int number) {
-        return number % 3 == 0;
+    private boolean isFizz(int number) {
+        return number % 3 == 0 || String.valueOf(number).contains("3");
     }
 }

@@ -38,6 +38,6 @@ public class FizzBuzzTest {
     @Test
     public void testCount16ReturnsFirstSixteenElements() {
         assertEquals(List.of("1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz",
-                "Buzz", "11", "Fizz", "13", "14", "FizzBuzz", "16"), fizzBuzz.forFirstN(16));
+                "Buzz", "11", "Fizz", "Fizz", "14", "FizzBuzz", "16"), fizzBuzz.forFirstN(16));
     }
 }
