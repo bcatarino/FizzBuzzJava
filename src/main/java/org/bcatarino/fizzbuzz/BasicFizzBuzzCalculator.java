@@ -7,7 +7,7 @@ public class BasicFizzBuzzCalculator implements FizzBuzzCalculator {
     public String getResult(int number) {
         if (number <= 0) throw new IllegalArgumentException(INVALID_ARGUMENT_MSG);
 
-        if (isMultipleOf3And5(number)) {
+        if (isMultipleOf3(number) && isMultipleOf5(number)) {
             return "FizzBuzz";
         }
 
@@ -20,10 +20,6 @@ public class BasicFizzBuzzCalculator implements FizzBuzzCalculator {
         }
 
         return String.valueOf(number);
-    }
-
-    private boolean isMultipleOf3And5(int number) {
-        return number % 15 == 0;
     }
 
     private boolean isMultipleOf5(int number) {
