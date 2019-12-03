@@ -43,4 +43,14 @@ public class BasicFizzBuzzCalculatorTest {
     public void testReturnsBuzzIfMultipleOf5() {
         assertEquals("Buzz", calculator.getResult(20));
     }
+
+    @Test
+    public void testReturnsFizzBuzzIfMinimumMultipleOf3And5() {
+        assertEquals("FizzBuzz", calculator.getResult(15));
+    }
+
+    @Test
+    public void testReturnsFizzBuzzIfMultipleOf3And5() {
+        assertEquals("FizzBuzz", calculator.getResult(60));
+    }
 }
