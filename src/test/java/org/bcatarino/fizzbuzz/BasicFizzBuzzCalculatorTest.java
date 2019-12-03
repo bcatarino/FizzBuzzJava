@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class FizzBuzzCalculatorTest {
+public class BasicFizzBuzzCalculatorTest {
 
     private FizzBuzzCalculator calculator = new BasicFizzBuzzCalculator();
 
     @Test
     public void testReturnsNumberStringForNumber() {
-          assertEquals("1", calculator.getResult(1));
+        assertEquals("1", calculator.getResult(1));
     }
 
     @Test
@@ -22,5 +22,15 @@ public class FizzBuzzCalculatorTest {
     @Test
     public void testThrowsIllegalArgumentForZero() {
         assertThrows(IllegalArgumentException.class, () -> calculator.getResult(0));
+    }
+
+    @Test
+    public void testReturnsFizzIf3() {
+        assertEquals("Fizz", calculator.getResult(3));
+    }
+
+    @Test
+    public void testReturnsFizzIfMultipleOf3() {
+        assertEquals("Fizz", calculator.getResult(9));
     }
 }
